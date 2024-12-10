@@ -21,14 +21,19 @@ if (!fs.existsSync(uploadDir)) {
 app.use(bodyParser.json());
 
 // Properly configure CORS
-const corsOptions = {
-  origin: "http://localhost:3000", // Your frontend URL
+/*const corsOptions = {
+  origin: "https://stirring-cuchufli-0e242f.netlify.app", // Your frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
   allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-};
+};*/
 
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // Handle preflight requests for all routes
+app.use(cors({
+  origin: "https://stirring-cuchufli-0e242f.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+//app.options("*", cors(corsOptions)); // Handle preflight requests for all routes
 
 // Serve static files (uploaded images and videos)
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));

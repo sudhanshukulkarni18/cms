@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Santosh Kumar",
+  "author": "Sudhanshu",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
